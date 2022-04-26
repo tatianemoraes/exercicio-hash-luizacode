@@ -6,10 +6,10 @@
 let arrayHash = new Array();
 let words = ["Luiza", "Luna", "Bia", "Luana"];
 
-function HashGeneratorPower(word) {
+function hashGeneratorPower(word) {
     // math.floor -> arredonda para baixo
     // math.random -> usado para gerar número randômico
-    let hashGenerator = Math.floor(Math.random() * 256);
+    let hashGenerator = Math.floor(Math.random() * 256 + (word.length));
     const foundHash = arrayHash.find(hash => hash === hashGenerator);
     if(foundHash) {
         hashGenerator++;
@@ -19,7 +19,7 @@ function HashGeneratorPower(word) {
 
 
 words.forEach(function(value, index) {
-    let indexHash = HashChangePower(value);
+    let indexHash = hashGeneratorPower(value);
     arrayHash[indexHash] = value;
     console.log(arrayHash);
 });
