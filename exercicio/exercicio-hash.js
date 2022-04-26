@@ -17,7 +17,6 @@ function hashGeneratorPower(word) {
     return hashGenerator;
 }
 
-
 words.forEach(function(value, index) {
     let indexHash = hashGeneratorPower(value);
     arrayHash[indexHash] = value;
